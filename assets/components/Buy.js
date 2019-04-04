@@ -2,11 +2,12 @@ import React from 'react'
 import {View, StyleSheet, TouchableWithoutFeedback} from 'react-native'
 import {Header, Icon, Text, Button} from 'react-native-elements'
 
-const Buy = ({router}) => {
+const Buy = () => {
   const {wrapper, textStyleHeaderRight, textStyleHeaderLeft, container, buttonStyle} = styles
   return (
     <View style={wrapper}>
       <Header
+        statusBarProps={{ barStyle: 'dark-content', translucent: true }}
         backgroundColor='#f9f9f9'
         leftComponent={<Text style={textStyleHeaderLeft}>Мои покупки</Text>}
         rightComponent={

@@ -1,13 +1,14 @@
 import React from 'react'
 import {View, ScrollView, StyleSheet, TouchableWithoutFeedback} from 'react-native'
-import {Header, Icon, Text} from 'react-native-elements'
+import {Header, Text} from 'react-native-elements'
 
-const Chat = ({router}) => {
+const Chat = () => {
   const {wrapper, textStyleHeaderRight, textStyleHeaderLeft} = styles
 
   return (
     <View style={wrapper}>
       <Header
+        statusBarProps={{ barStyle: 'dark-content', translucent: true }}
         backgroundColor='#f9f9f9'
         leftComponent={<Text style={textStyleHeaderLeft}>Мои чаты</Text>}
         rightComponent={

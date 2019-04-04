@@ -1,6 +1,6 @@
 import React from 'react'
-import {View, StyleSheet} from 'react-native'
-import {Text, ListItem} from 'react-native-elements'
+import {View, StyleSheet, Image} from 'react-native'
+import {Text, ListItem, Avatar} from 'react-native-elements'
 
 const list = [
   {
@@ -14,11 +14,16 @@ const list = [
   }
 ]
 
-const Profile = ({router}) => {
+const Profile = () => {
   const {wrapper, textStyle, viewStyleOne, viewStyleOTwo} = styles
   return (
     <View style={wrapper}>
         <View style={viewStyleOne}>
+          <Avatar
+            size='large'
+            rounded
+            source={require('../images/user2.png')}
+          />
           <Text style={textStyle}>Иван Иванов</Text>
         </View>
         <View style={viewStyleOTwo}>
