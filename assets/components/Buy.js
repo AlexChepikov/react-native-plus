@@ -1,6 +1,6 @@
 import React from 'react'
 import {View, StyleSheet, TouchableWithoutFeedback} from 'react-native'
-import {Header, Icon, Text, Button} from 'react-native-elements'
+import {Header, Text, Button} from 'react-native-elements'
 
 const Buy = () => {
   const {wrapper, textStyleHeaderRight, textStyleHeaderLeft, container, buttonStyle} = styles
@@ -30,19 +30,19 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1
   },
-  container:{
-    padding:10
+  container: {
+    padding: 10
   },
-  textStyleHeaderRight:{
+  textStyleHeaderRight: {
     fontSize: 16,
-    color:'#00d3ef'
+    color: '#00d3ef'
   },
-  textStyleHeaderLeft:{
+  textStyleHeaderLeft: {
     fontSize: 16,
-    color:'#000',
+    color: '#000',
     fontWeight: '600'
   },
-  buttonStyle:{
+  buttonStyle: {
     backgroundColor: '#007aff',
     borderRadius: 5
   }

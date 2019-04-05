@@ -1,5 +1,5 @@
 import React from 'react'
-import {View, ScrollView, StyleSheet, TouchableWithoutFeedback} from 'react-native'
+import {View, StyleSheet, TouchableWithoutFeedback} from 'react-native'
 import {Header, Text} from 'react-native-elements'
 
 const Chat = () => {
@@ -17,8 +17,7 @@ const Chat = () => {
           </TouchableWithoutFeedback>
         }
       />
-      <View>
-      </View>
+      <View />
     </View>
   )
 }
@@ -27,13 +26,13 @@ const styles = StyleSheet.create({
   wrapper: {
     flex: 1
   },
-  textStyleHeaderRight:{
+  textStyleHeaderRight: {
     fontSize: 16,
-    color:'#00d3ef'
+    color: '#00d3ef'
   },
-  textStyleHeaderLeft:{
+  textStyleHeaderLeft: {
     fontSize: 16,
-    color:'#000',
+    color: '#000',
     fontWeight: '600'
   }
 })
