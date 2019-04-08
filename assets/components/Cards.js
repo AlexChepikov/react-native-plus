@@ -1,5 +1,6 @@
 import React from 'react'
 import {View, StyleSheet, TouchableWithoutFeedback, Text, Image, ScrollView, TouchableOpacity} from 'react-native'
+import {Transition} from 'react-navigation-fluid-transitions'
 import {Header} from 'react-native-elements'
 
 class Cards extends React.Component {
@@ -28,67 +29,83 @@ class Cards extends React.Component {
     const item = [
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/y92vtamvlLsvI6oPVDeX.png',
-        bgcolor1: '#941305'
+        bgcolor1: '#941305',
+        name: 'Пятерочка'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/YQn7txoHSpCalxMC1nHr.png',
-        bgcolor1: '#9c1018'
+        bgcolor1: '#9c1018',
+        name: '585 Золотой'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/YQn7txoHSpCalxMC1nHr.png',
-        bgcolor1: '#0c5472'
+        bgcolor1: '#0c5472',
+        name: '585 Золотой'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/Q1yVkYEOcbnYwTcJYTwP.png',
-        bgcolor1: '#93060f'
+        bgcolor1: '#93060f',
+        name: 'М.Видео'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/rZT888p58RHnu4074dRi.png',
-        bgcolor1: '#203c8c'
+        bgcolor1: '#203c8c',
+        name: 'Лента'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/MARXOLrTsFeKXuZFD4Rm.png',
-        bgcolor1: '#553a28'
+        bgcolor1: '#553a28',
+        name: 'Кантата'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/EcoBUk4yYhzlgPsTtJom.png',
-        bgcolor1: '#0d4177'
+        bgcolor1: '#0d4177',
+        name: 'Спортмастер'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/A88edLIplkwtnLajQqzR.png',
-        bgcolor1: '#000000'
+        bgcolor1: '#000000',
+        name: 'ECCO'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/z7J8p4EJKTHATjOP7loj.png',
-        bgcolor1: '#c63f0a'
+        bgcolor1: '#c63f0a',
+        name: 'ТехноМакс'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/gK2HrsvZMgx6Mpf8WvaT.png',
-        bgcolor1: '#75862a'
+        bgcolor1: '#75862a',
+        name: 'YVES ROCHER'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/xDKwIbr8RI7UeAU2h39V.png',
-        bgcolor1: '#a7270a'
+        bgcolor1: '#a7270a',
+        name: 'Спортугалия'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/58t0u9si4meU4AfSCLAg.png',
-        bgcolor1: '#0c1f3d'
+        bgcolor1: '#0c1f3d',
+        name: 'Триал Спорт'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/uXl6UsKkaglWMH07GkT5.png',
-        bgcolor1: '#071e40'
+        bgcolor1: '#071e40',
+        name: 'Метро'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/JThNZGYrt3JbU3Qrk4MB.png',
-        bgcolor1: '#6f0907'
+        bgcolor1: '#6f0907',
+        name: 'Мир пива'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/eRcr17zjfau1dRSCzRJG.png',
-        bgcolor1: '#fcd10d'
+        bgcolor1: '#fcd10d',
+        name: 'MAKK'
       },
       {
         image: 'http://backend.pluscards.ru/storage/resized/x_160/LWz0jhfnqayw6rNAurUs.png',
-        bgcolor1: '#5f1a1b'
+        bgcolor1: '#5f1a1b',
+        name: 'Леонардо'
       }
     ]
     return (
@@ -104,12 +121,15 @@ class Cards extends React.Component {
           }
         />
         <View style={container}>
-          <ScrollView>
+          <Text style={{fontSize: 24, fontWeight: '600', marginBottom: 10}}>Мои карты</Text>
+          <ScrollView horizontal='true'>
             {
               item.map((value, i) => (
-                <TouchableOpacity key={i.toString()} onPress={() => this.props.navigation.navigate('Детали')}>
-                  <View key={i.toString()} style={{width: '100%', height: 120, borderRadius: 5, padding: 20, marginBottom: 10, backgroundColor: value.bgcolor1}}>
-                    <Image onPress={() => this.props.navigation.navigate('Профиль')} resizeMode='contain' style={{flex: 1}} source={{uri: value.image}} />
+                <TouchableOpacity style={{marginRight: 10}} key={i.toString()} onPress={() => this.props.navigation.navigate('Детали', {image: value.image, bgcolor: value.bgcolor1, item: i})}>
+                  <View key={i.toString()} style={{width: '100%', height: 100, borderRadius: 5, padding: 20, backgroundColor: value.bgcolor1}}>
+                    <Transition shared={`logo${i}`}>
+                      <Image resizeMode='contain' style={{flex: 1, width: 150, height: 100}} source={{uri: value.image}} />
+                    </Transition>
                   </View>
                 </TouchableOpacity>
               ))
@@ -126,7 +146,6 @@ const styles = StyleSheet.create({
     flex: 1
   },
   container: {
-    flex: 1,
     paddingTop: 10,
     paddingLeft: 10,
     paddingRight: 10
