@@ -8,7 +8,7 @@ class Cards extends React.Component {
     data: ''
   }
 
-  componentWillMount = async () => {
+  componentDidMount = async () => {
     try {
       const response = await fetch(
         'http://backend.pluscards.ru/api/account', {
