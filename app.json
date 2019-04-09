@@ -10,9 +10,9 @@
     ],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "",
+    "icon": "./assets/icon1.png",
     "splash": {
-      "image": "",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
@@ -24,11 +24,11 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "pluscards.ru"
+      "bundleIdentifier": "com.pluscards.alexchepikov"
     },
     "android": {
-      "package": "pluscards.ru"
+      "package": "com.pluscards.alexchepikov"
     },
-    "description": ""
+    "description": "Plus - бонусы и карты"
   }
 }
